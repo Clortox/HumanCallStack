@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#must have an argument
+if [ "$#" -eq 0 ]; then
+    echo "Usage:" $0 "[STRING TO PUT ON STACK]"
+    echo "Pushes the given string to the top of the todo stack"
+    exit 1
+fi
+
+str="'$*'"
+
+if [ -z "$str" ]; then
+    echo "Must provide a non empty argument"
+    exit 1
+fi
+
+if [ -z "${TODO_LOCATION}" ]; then
+    mkdir -p $HOME/.config/stackToDo
+    TODO_LOCATION="$HOME/.config/stackToDo/todo"
+fi
+
+echo $str >> $TODO_LOCATION

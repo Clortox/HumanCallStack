@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#zero arguments
+if [ "$#" -ne 0 ]; then
+    echo "Usage:" $0
+    echo "Returns what is at the top of the todo stack"
+fi
+
+if [ -z "${TODO_LOCATION}" ]; then
+    mkdir -p $HOME/.config/stackToDo
+    TODO_LOCATION="$HOME/.config/stackToDo/todo"
+fi
+
+#make correct directories
+touch $TODO_LOCATION
+
+tail -1 $TODO_LOCATION

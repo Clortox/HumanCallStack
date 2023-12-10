@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#must have no arguments
+if [ "$#" -ne 0 ]; then
+    echo "Usage:" $0
+    echo "Remove the last element of the stack and prints it"
+    exit 1
+fi
+
+if [ -z "${TODO_LOCATION}" ]; then
+    TODO_LOCATION="$HOME/.config/stackToDo/todo"
+    mkdir -p $HOME/.config/stackToDo
+fi
+
+tail -1 $TODO_LOCATION
+sed -i '$ d' $TODO_LOCATION
