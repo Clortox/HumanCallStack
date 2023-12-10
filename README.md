@@ -1,3 +1,3 @@
-# Generic-Template
+# HumanCallStack
 
-Bsaic Template Repository with workflow items present.
+This is an interation on my previous project, [stackToDo](https://git.clortox.com/tyler/stackToDo).
