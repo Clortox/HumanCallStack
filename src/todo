@@ -1,0 +1,8 @@
+#!/bin/bash
+
+CHOICE=$(echo -e "Push\nPop\nPeek" | dmenu -i -p "Option >")
+
+case $CHOICE in
+    "Pop") dpop;;
+    "Peek") dpeek;;
+esac
