@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ -z "${TODO_LOCATION}" ]; then
+    mkdir -p $HOME/.config/stackToDo
+    TODO_LOCATION="$HOME/.config/stackToDo/todo"
+fi
+
+watch -n 1 "tac \"$TODO_LOCATION\" | sed '1s/^\(.*\)$/> \1 </' | sed '2,\$s/^/  /'"
